@@ -1,0 +1,12 @@
+PyTDC==0.4.1
+rdkit
+scikit-learn>=1.0
+imbalanced-learn
+pandas
+numpy
+matplotlib
+seaborn
+requests
+tqdm
+fuzzywuzzy
+setuptools<70
