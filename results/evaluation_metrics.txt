@@ -1,0 +1,111 @@
+======================================================================
+      DRUG-TARGET INTERACTION (DTI) PREDICTION EVALUATION REPORT
+======================================================================
+
+1. DATASET & EXPERIMENTAL SETUP
+----------------------------------------------------------------------
+Dataset Name:         BindingDB_Kd
+Binding Threshold:    30.0 nM
+Total Raw Pairs:      52274
+Valid Processed Pairs:52274
+Binding Pairs (1):    7993 (15.29%)
+Non-Binding Pairs (0):44281 (84.71%)
+Feature Dimension:    587 (167 MACCS Keys + 20 AAC + 400 DC)
+Train/Test Split:     80% Train (41819) / 20% Test (10455)
+Class Balancing:      SMOTE oversampling (Balanced train samples: 70850)
+
+2. SUMMARY METRICS COMPARISON TABLE
+----------------------------------------------------------------------
+Model                     | Accuracy | Precision | Recall   | Spec     | F1       | ROC-AUC  | PR-AUC  
+-----------------------------------------------------------------------------------------------------
+Random Forest             | 0.8890   | 0.6484    | 0.5985   | 0.9414   | 0.6224   | 0.9101   | 0.6944  
+Decision Tree             | 0.8694   | 0.5708    | 0.5897   | 0.9199   | 0.5801   | 0.7836   | 0.4376  
+Multi-Layer Perceptron    | 0.8835   | 0.6121    | 0.6504   | 0.9256   | 0.6307   | 0.9195   | 0.7094  
+
+3. DETAILED MODEL EVALUATIONS
+======================================================================
+
+Model: Random Forest
+--------------------------------------------------
+  Training Time:        6.75 seconds
+  Accuracy:             0.8890
+  Precision:            0.6484
+  Recall (Sensitivity): 0.5985
+  Specificity:          0.9414
+  F1-Score:             0.6224
+  ROC-AUC:              0.9101
+  PR-AUC:               0.6944
+
+  Confusion Matrix:
+    [[TN= 8337, FP=  519],
+     [FN=  642, TP=  957]]
+
+  Classification Report:
+                     precision    recall  f1-score   support
+    
+    Non-Binding (0)     0.9285    0.9414    0.9349      8856
+        Binding (1)     0.6484    0.5985    0.6224      1599
+    
+           accuracy                         0.8890     10455
+          macro avg     0.7884    0.7699    0.7787     10455
+       weighted avg     0.8857    0.8890    0.8871     10455
+    
+
+--------------------------------------------------
+
+Model: Decision Tree
+--------------------------------------------------
+  Training Time:        14.50 seconds
+  Accuracy:             0.8694
+  Precision:            0.5708
+  Recall (Sensitivity): 0.5897
+  Specificity:          0.9199
+  F1-Score:             0.5801
+  ROC-AUC:              0.7836
+  PR-AUC:               0.4376
+
+  Confusion Matrix:
+    [[TN= 8147, FP=  709],
+     [FN=  656, TP=  943]]
+
+  Classification Report:
+                     precision    recall  f1-score   support
+    
+    Non-Binding (0)     0.9255    0.9199    0.9227      8856
+        Binding (1)     0.5708    0.5897    0.5801      1599
+    
+           accuracy                         0.8694     10455
+          macro avg     0.7482    0.7548    0.7514     10455
+       weighted avg     0.8712    0.8694    0.8703     10455
+    
+
+--------------------------------------------------
+
+Model: Multi-Layer Perceptron
+--------------------------------------------------
+  Training Time:        851.42 seconds
+  Accuracy:             0.8835
+  Precision:            0.6121
+  Recall (Sensitivity): 0.6504
+  Specificity:          0.9256
+  F1-Score:             0.6307
+  ROC-AUC:              0.9195
+  PR-AUC:               0.7094
+
+  Confusion Matrix:
+    [[TN= 8197, FP=  659],
+     [FN=  559, TP= 1040]]
+
+  Classification Report:
+                     precision    recall  f1-score   support
+    
+    Non-Binding (0)     0.9362    0.9256    0.9308      8856
+        Binding (1)     0.6121    0.6504    0.6307      1599
+    
+           accuracy                         0.8835     10455
+          macro avg     0.7741    0.7880    0.7808     10455
+       weighted avg     0.8866    0.8835    0.8849     10455
+    
+
+--------------------------------------------------
+
